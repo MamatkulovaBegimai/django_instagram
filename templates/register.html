@@ -11,44 +11,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
-    <header class=" simple_padding header bg-light"> 
-        <div class="container">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Instagram</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Главное</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Чат</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Мой аккаунт</a>
-                      </li>
-                    </ul>
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Поиск...  " aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Поиск</button>
-                    </form>
-                  </div>
-                </div>
-              </nav>
-        </div>
-    </header>
+  {%include 'include/header.html'%}
     <div class=" simple_padding album py-5 bg-light">
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-7 col-lg-8">
                   <h4 class="mb-3">Регистрация</h4>
-                  <form class="needs-validation" method="POST" enctype="multipart/form-data">
+                  <form class="needs-validation" method = "POST" enctype="multipart/form-data">
                     {%csrf_token%}
                     <div class="row g-3">
+                      
+          
                       <div class="col-12">
                         <label for="username" class="form-label">Username</label>
                         <div class="input-group has-validation">
@@ -61,17 +34,17 @@
                         <label for="email" class="form-label">Email </label>
                         <input name="email" type="email" class="form-control" id="email" placeholder="you@example.com">
                       </div>
-          
-                      <div class="col-12">
-                        <label for="email" class="form-label">Фотография пользователя </label>
-                        <input name="profile_image" type="file" class="form-control" id="email" placeholder="you@example.com">
-                      </div>
 
                       <div class="col-12">
                         <label for="email" class="form-label">Номер телефона </label>
                         <input name="phone" type="text" class="form-control" id="email" placeholder="+996">
                       </div>
 
+                      <div class="col-12">
+                        <label for="email" class="form-label">Фотография пользователя </label>
+                        <input name="profile_image" type="file" class="form-control" id="email">
+                      </div>
+          
                       <div class="col-12">
                         <label for="address" class="form-label">Пароль</label>
                         <input name="password" type="password" class="form-control" id="address"  required="">
